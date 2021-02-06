@@ -6,5 +6,5 @@ EWA Bookstore work ( Sprint 2 : Spring ) : Backend academic project developed by
 - Yousra GRITLI
 - Yesser ZAYET
 - Siwar BEN AMMAR
-- Ezer GARIANI
+- Mohamed Ezer GHARIANI
 - Shayma JLASSI
