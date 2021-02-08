@@ -1,5 +1,0 @@
-INDEX VERSION 1.130+C:\Users\MY HP\Documents\workspace-sts-3.8.4.RELEASE\.metadata\.plugins\org.eclipse.jdt.core
-330513442.index
-1584714973.index
-1963252784.index
-1274212661.index

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="TestAdd" project="MyBookStore" tests="3" started="3" failures="0" errors="0" ignored="0">
-  <testsuite name="tn.esprit.spring.TestAdd" time="1.203">
-    <testcase name="testAddCategorie" classname="tn.esprit.spring.TestAdd" time="0.748"/>
-    <testcase name="testAddouvrage" classname="tn.esprit.spring.TestAdd" time="0.386"/>
-    <testcase name="testAddAuthor" classname="tn.esprit.spring.TestAdd" time="0.069"/>
-  </testsuite>
-</testrun>
