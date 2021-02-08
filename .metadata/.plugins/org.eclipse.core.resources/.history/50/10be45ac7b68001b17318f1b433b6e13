@@ -1,0 +1,77 @@
+package tn.esprit.spring.service;
+
+import java.util.HashSet;
+import java.util.List;
+import java.util.Optional;
+import java.util.Set;
+
+import org.apache.logging.log4j.LogManager;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import tn.esprit.spring.entity.Auteur;
+import tn.esprit.spring.entity.Categorie;
+import tn.esprit.spring.entity.Ouvrage;
+import tn.esprit.spring.repository.CategorieRepository;
+import tn.esprit.spring.repository.OuvrageRepository;
+@Service
+public class CategorieServiceImpl implements CategorieService{
+	@Autowired
+	CategorieRepository catRepository;
+	@Autowired
+	OuvrageServiceImpl ouvrage;
+	@Autowired
+	OuvrageRepository ouvRepository;
+	private static final org.apache.logging.log4j.Logger l = LogManager.getLogger(CategorieServiceImpl.class);
+
+	@Override
+	public List<Categorie> retrieveAllCat() {
+		List<Categorie> categorie = (List<Categorie>) catRepository.findAll();
+		for (Categorie ouv : categorie)
+		{
+			l.info("categorie +++ : "+ouv);
+		}
+		return categorie;
+	}
+
+	@Override
+	public Categorie addCategorie(Categorie u) {
+		return catRepository.save(u);
+	}
+
+	@Override
+	public void deleteCat (String id) {
+		catRepository.deleteById(id);
+		
+	}
+
+	@Override
+	public Categorie updateCat(Categorie u) {
+		return catRepository.save(u);
+	}
+
+	@Override
+	public Optional<Categorie> retrieveCat (String id) {
+		Optional<Categorie> u = catRepository.findById(id);
+		l.info("Categorie !:"+u);
+		return u;
+	}
+
+	@Override
+	public void affecterCategorieAOuvrage(String catId, int ouvrageId) {
+    Set <Categorie> set = new HashSet()	;
+	Optional<Ouvrage> o =  ouvrage.retrieveOuvrage(ouvrageId);
+	Optional<Categorie> c = retrieveCat(catId);
+	
+	
+    Ouvrage o1=	o.get();
+    Categorie c1 = c.get();
+    
+    set.add(c1);
+    o1.setCategorie(set);
+    
+    ouvRepository.save(o1);
+	
+	}
+
+}

@@ -1,0 +1,72 @@
+
+package tn.esprit.spring.controller;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import tn.esprit.spring.entity.Auteur;
+import tn.esprit.spring.entity.Categorie;
+import tn.esprit.spring.service.AuteurServiceImpl;
+
+public class AuteurRestControllerImpl {
+
+	
+	@Autowired
+	AuteurServiceImpl aut;
+	
+	
+	//http://localhost:3000/springmvc/servlet/retrieveallAut
+		@GetMapping("/retrieveallAut")
+		@ResponseBody
+		 public List<Auteur> getOuvrage() {
+		 List<Auteur> list = aut.retrieveAllCAut();
+		 return list;
+		 }
+		
+		
+		// http://localhost:3000/SpringMVC/servlet/retrieve-auteur/8
+		@GetMapping("/retrieve-auteur/{id}")
+		 @ResponseBody
+		 public Optional<Auteur> retrieveAuteur(@PathVariable("id") int id) {
+		 return aut.retrieveAut(id);
+		 }
+		
+		// http://localhost:3000/springmvc/servlet/add-auteur
+		 @PostMapping("/add-auteur")
+		 @ResponseBody
+		 public Auteur addOuvrage(@RequestBody Auteur u) {
+			 Auteur c  = aut.addAuteur(u);
+		 return c;
+		 }
+		
+		
+		
+		// http://localhost:3000/springmvc/servlet/remove-cat/{cat-id}
+			  @DeleteMapping("/remove-cat/{cat-id}")
+			  @ResponseBody
+			 public void removeOuv(@PathVariable("cat-id") String id) {
+				  cat.deleteCat(id);
+			  }
+		
+			// http://localhost:3000/springmvc/servlet/modify-cat
+			   @PutMapping("/modify-cat")
+			   @ResponseBody
+			   public Categorie modifyAudio(@RequestBody Categorie ou) {
+			   return cat.updateCat(ou);
+			   }	  
+		
+		
+	
+	
+	
+	
+}

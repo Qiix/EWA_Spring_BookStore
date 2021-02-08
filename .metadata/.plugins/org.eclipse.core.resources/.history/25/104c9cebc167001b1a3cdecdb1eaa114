@@ -1,0 +1,49 @@
+package tn.esprit.spring;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+import tn.esprit.spring.entity.Auteur;
+import tn.esprit.spring.service.AuteurServiceImpl;
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class AuteurTest {
+	@Autowired
+	AuteurServiceImpl auteur;
+	@Test
+	public void testRetriveAllAuthor ()
+	{
+		System.out.println (auteur.retrieveAllCAut());
+	}
+	
+	@Test
+	public void testAddAuthor ()
+	{
+		System.out.println("**********************add****************");
+		Auteur a = new Auteur (8,"victor","france");
+				auteur.addAuteur(a);
+	}
+	/*@Test
+	public void testDeleteAuthor ()
+	{
+		System.out.println("**********************delete****************");
+		auteur.deleteAut(2);
+	}
+	
+	@Test
+	public void testupdateAuthor ()
+	{
+		System.out.println("**********************update****************");
+		Auteur a = new Auteur (1,"victorrrrr","france");
+		auteur.updateAut(a);
+	}
+	
+	@Test
+	public void testRetrieveAuthor ()
+	{
+		System.out.println("**********************retrieveaut****************");
+		System.out.println(auteur.retrieveAut(21));
+	}*/
+}

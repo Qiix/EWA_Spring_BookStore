@@ -1,0 +1,8 @@
+127.0.0.1 - - [25/Jan/2021:21:09:11 +0100] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [25/Jan/2021:21:09:16 +0100] "GET /LogementService/rest/logment HTTP/1.1" 500 4076
+0:0:0:0:0:0:0:1 - - [25/Jan/2021:21:10:26 +0100] "GET /LogementService/rest/logment HTTP/1.1" 500 4076
+0:0:0:0:0:0:0:1 - - [25/Jan/2021:21:11:20 +0100] "GET /LogementService/rest/logment HTTP/1.1" 500 4076
+0:0:0:0:0:0:0:1 - - [25/Jan/2021:21:11:29 +0100] "GET /LogementService/rest/logment HTTP/1.1" 500 4076
+0:0:0:0:0:0:0:1 - - [25/Jan/2021:21:12:20 +0100] "GET /LogementService/rest/logment HTTP/1.1" 500 4076
+0:0:0:0:0:0:0:1 - - [25/Jan/2021:21:12:37 +0100] "GET /LogementService/rest/logment HTTP/1.1" 500 4076
+0:0:0:0:0:0:0:1 - - [25/Jan/2021:21:13:13 +0100] "GET /LogementService/rest/rendezvous HTTP/1.1" 500 4076

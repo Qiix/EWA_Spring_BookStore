@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRetrieve" project="MyBookStore" tests="6" started="6" failures="0" errors="0" ignored="0">
+  <testsuite name="tn.esprit.spring.TestRetrieve" time="0.552">
+    <testcase name="testRetriveAllAuthor" classname="tn.esprit.spring.TestRetrieve" time="0.451"/>
+    <testcase name="testRetriveAllouvrage" classname="tn.esprit.spring.TestRetrieve" time="0.016"/>
+    <testcase name="testRetrieveAuthor" classname="tn.esprit.spring.TestRetrieve" time="0.038"/>
+    <testcase name="testRetrieveouvrage" classname="tn.esprit.spring.TestRetrieve" time="0.0"/>
+    <testcase name="testRetrieveCat" classname="tn.esprit.spring.TestRetrieve" time="0.031"/>
+    <testcase name="testRetriveAllCategorie" classname="tn.esprit.spring.TestRetrieve" time="0.016"/>
+  </testsuite>
+</testrun>
