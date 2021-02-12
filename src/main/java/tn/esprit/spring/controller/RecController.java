@@ -37,21 +37,21 @@ public class RecController {
 		
 		
 	@PostMapping("/reclamations")
-	public Reclamation addReclamation (@RequestBody Reclamation r) {
+	public void addReclamation (@RequestBody Reclamation r) {
 		
-		return sr.ajouterReclamation(r) ;	
+		sr.ajouterReclamation(r) ;	
 	}
 	
 	
     @DeleteMapping("/reclamations/{id}")
 	public void deletereclamation (@PathVariable("id") int reclamationId ) {
-	sr.supprimerReclamation(reclamationId);
+    	sr.supprimerReclamation(reclamationId);
 	}
     
     
  	@PutMapping("/reclamations")
  	public Reclamation updateReclamation (@RequestBody Reclamation r) {
- 	return sr.modifierReclamation(r);	
+ 		return sr.modifierReclamation(r);	
  	}
 	
 	

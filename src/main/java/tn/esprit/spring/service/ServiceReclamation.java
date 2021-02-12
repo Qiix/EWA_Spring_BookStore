@@ -1,11 +1,14 @@
 package tn.esprit.spring.service;
 
 
+import java.util.ArrayList;
 import java.util.List;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+//import org.apache.logging.log4j.LogManager;
+//import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import tn.esprit.spring.entities.Client;
 import tn.esprit.spring.entities.Reclamation;
 import tn.esprit.spring.repository.ReclamationRepo;
 
@@ -15,15 +18,15 @@ public class ServiceReclamation implements InterReclamation {
 	@Autowired
 	ReclamationRepo rr;
 	
-	private static final Logger L = LogManager.getLogger(ServiceReclamation.class);
+	//private static final Logger L = LogManager.getLogger(ServiceReclamation.class);
 	
 	
 	@Override
 	public List<Reclamation> afficherReclamations() {
 		
-		List<Reclamation> r = (List<Reclamation>) rr.findAll();
-		for (Reclamation rec:r)
-			L.info("reclamation+++"+rec.toString());
+		List<Reclamation> r = new ArrayList<Reclamation>();
+		
+		rr.findAll().forEach(c -> r.add(c));
 		
 		return r;
 		
@@ -34,8 +37,8 @@ public class ServiceReclamation implements InterReclamation {
 	@Override
 	public Reclamation rechercherReclamation(int id) {
 		
-		L.info("Réclamation : ");
-		L.info(rr.findById(id).orElse(null));
+		//L.info("Réclamation : ");
+		//L.info(rr.findById(id).orElse(null));
 		return rr.findById(id).orElse(null);
 		
 	}
@@ -52,14 +55,14 @@ public class ServiceReclamation implements InterReclamation {
 	public void supprimerReclamation(int id) {
 		
 		rr.deleteById(id);
-		L.info("Réclamation supprimée avec succès");
+		//L.info("Réclamation supprimée avec succès");
 		
 	}
 
 	@Override
 	public Reclamation modifierReclamation(Reclamation rec) {
 		
-		L.info("Réclamation modifié avec succès");
+		//L.info("Réclamation modifié avec succès");
 		return rr.save(rec);
 	}
 

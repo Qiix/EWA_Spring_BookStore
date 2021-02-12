@@ -67,12 +67,13 @@ class PartSiwarApplicationTests {
 	@Test
 	public void testAjouterReclamation() {
 		Client c = sc.rechercherClient(5);
-		Reclamation r = new Reclamation("prix","nnnnnnnn", c);
+		//Client c = new Client();
+		Reclamation r = new Reclamation("prix","nnnnnnnn",c);
 		sr.ajouterReclamation(r);
 		
 	}
 	
-/*	
+	/*
 	@Test
 	public void testAfficherReclamations() {
 		List<Reclamation> l = sr.afficherReclamations();
@@ -86,21 +87,22 @@ class PartSiwarApplicationTests {
 		
 	}
 	
-	
+
 	
 	@Test
 	public void testSupprimerReclamation() {
-		sr.supprimerReclamation(1);
-	}
-	
-	@Test
-	public void testModifierReclamation() {
-		Reclamation r = new Client("gheriani","ezer","ezergh@esp.tn","pwd753",13569212,"22569125");
-		r.setTitre("xx");
-		sr.modifierReclamation(r);
-		
+		sr.supprimerReclamation(2);
 	}*/
 	
+	/*
+	@Test
+	public void testModifierReclamation() {
+		Reclamation r = sr.rechercherReclamation(2);
+		r.setDescription("xx");
+		sr.modifierReclamation(r);
+		
+	}
+	*/
 	
 	
 }
